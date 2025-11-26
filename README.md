@@ -44,9 +44,9 @@ assets/
 
 ### GraphQL Playground
 
-![GraphQL Playground](./assets/Screenshot from 2025-11-26 23-45-38.png)
+![GraphQL Playground](./assets/category_with_post.png)
 
-![GraphQL Playground](./assets/Screenshot from 2025-11-26 23-46-05.png)
+![GraphQL Playground](./assets/post_query.png)
 
 ---
 
