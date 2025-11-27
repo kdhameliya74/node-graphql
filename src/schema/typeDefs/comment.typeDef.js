@@ -10,4 +10,4 @@ export const commentTypeDefs = `#graphql
         comments: [Comment!]!
         comment(id: ID!): Comment
     }
-`
+`;

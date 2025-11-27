@@ -77,27 +77,39 @@ Automated tests use mocked data and check resolver logic and schema validity.
 npm test
 ```
 
-Test results will be shown in your terminal.  
+Test results will be shown in your terminal.
 
 ---
 
 ## Example Queries
 
 **Get paginated posts:**
+
 ```graphql
 query {
   posts(limit: 2, page: 1) {
     total
-    items { id title }
+    items {
+      id
+      title
+    }
   }
 }
 ```
 
 **Get categories with posts:**
+
 ```graphql
 query {
   categories(limit: 2, page: 1) {
-    items { id name posts { id title } }
+    items {
+      id
+      name
+      posts {
+        id
+        title
+      }
+    }
     total
     hasNext
   }

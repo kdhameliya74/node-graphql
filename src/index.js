@@ -1,11 +1,11 @@
 // Entry Point
-import { ApolloServer } from "@apollo/server";
-import { startStandaloneServer } from "@apollo/server/standalone";
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
 
 // Type Definitions
-import typeDefs from "@/schema/typeDefs";
+import typeDefs from '@/schema/typeDefs';
 // Resolvers
-import resolvers from "@/schema/resolvers";
+import resolvers from '@/schema/resolvers';
 
 const PORT = 8080;
 

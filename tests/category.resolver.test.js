@@ -8,7 +8,7 @@ jest.mock('../src/data/categories.js', () => ({
     { id: 1, name: 'Mock Category 1' },
     { id: 2, name: 'Mock Category 2' },
     { id: 3, name: 'Mock Category 3' },
-  ]
+  ],
 }));
 
 jest.mock('../src/data/posts.js', () => ({
@@ -16,14 +16,13 @@ jest.mock('../src/data/posts.js', () => ({
     { id: 1, title: 'Post 1', categoryId: 1 },
     { id: 2, title: 'Post 2', categoryId: 1 },
     { id: 3, title: 'Post 3', categoryId: 2 },
-  ]
+  ],
 }));
 
 const schema = makeExecutableSchema({
   typeDefs,
-  resolvers: { Query: Category.Query, Category: Category.Category }
+  resolvers: { Query: Category.Query, Category: Category.Category },
 });
-
 
 describe('category resolver', () => {
   it('returns paginated categories with total and hasNext', async () => {
