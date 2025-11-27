@@ -1,11 +1,10 @@
-name: "node application"
+name: "Node Application"
+
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build-and-test:
@@ -18,20 +17,31 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-
-      - name: Install pnpm
-        run: npm install -g pnpm
+          cache: 'pnpm' # now pnpm exists before this runs
 
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run tests
+      - name: Run Lint
+        run: pnpm run lint
+
+      - name: Run Tests
         run: pnpm run test
 
-      - name: Build project
+      - name: Build Project
         run: pnpm run build
+
+      - name: Upload dist folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
