@@ -1,4 +1,4 @@
-name: "Node Application"
+name: 'Node Application'
 
 on:
   push:

@@ -4,6 +4,7 @@ import jestPlugin from 'eslint-plugin-jest';
 import globals from 'globals';
 
 export default [
+  { ignores: ['dist/'] },
   js.configs.recommended,
 
   // Node environment config for all JS files except tests
